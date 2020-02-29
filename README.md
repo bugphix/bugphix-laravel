@@ -4,6 +4,9 @@
 
 <h3 align="center">Capture and monitor detailed error logs with nice dashboard and UI</h3>
 
+#### Requirements
+- Currently tested working with Laravel 6
+
 ## Installation
     $ composer require bugphix/bugphix-laravel
 
