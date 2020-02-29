@@ -1,7 +1,5 @@
  <template lang="pug">
-#main-wrapper(
-  :class="{'toggle-menu' : toggleMenu}"
-)
+#main-wrapper
   #loading-overlay(v-if="isPageLoading")
     span.loading-icon
 
@@ -176,6 +174,7 @@ export default {
       background: rgba(255, 255, 255, 0.8);
       z-index: 20;
       display: flex;
+      align-items: center;
       justify-content: center;
     }
 
