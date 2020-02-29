@@ -1,0 +1,50 @@
+{
+    "name": "bugphix/bugphix-laravel",
+    "description": "Capture and monitor detailed error logs with nice dashboard and UI.",
+    "keywords": [
+        "bugphix",
+        "bugphix-laravel",
+        "laravel-bugphix",
+        "laravel-error",
+        "error",
+        "error-catcher",
+        "error-handler",
+        "error-manager",
+        "error-monitoring",
+        "error-watcher",
+        "error-viewer",
+        "error-logger"
+    ],
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jeric Izon",
+            "email": "im.jericizon@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": {
+            "Bugphix\\BugphixLaravel\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Bugphix\\BugphixLaravel\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Bugphix\\BugphixLaravel\\BugphixServiceProvider"
+            ]
+        }
+    },
+    "require-dev": {
+        "orchestra/testbench": "^4.0"
+    },
+    "require": {
+        "guzzlehttp/guzzle": "^7.0@dev"
+    }
+}

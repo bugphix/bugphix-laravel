@@ -1,0 +1,150 @@
+$primary: #2979ff;
+$secondary: #27f2eb;
+// $accent: #f2f7ff
+$link: $primary;
+
+@import "../../../node_modules/bulma/bulma.sass";
+@import url('https://fonts.googleapis.com/css?family=Muli:400,600&display=swap');
+
+.modal{
+    .modal-background {
+        background-color: rgba(255, 255, 255, 0.5);
+    }
+    .modal-card {
+        box-shadow: 7px 6px 20px rgba(0, 0, 0, 0.2);
+    }
+}
+
+body{
+    font-family: 'Muli', sans-serif;
+	font-size: 16px;
+	line-height: 22px;
+	font-weight: 400;
+}
+
+#main-menu{
+	li {
+		a:hover,
+		a.router-link-active{
+			background-color: $primary;
+			color: #fff;
+		}
+	}
+}
+
+.loading-icon{
+	-webkit-animation: spinAround 500ms infinite linear;
+    animation: spinAround 500ms infinite linear;
+    border: 2px solid #dbdbdb;
+    border-radius: 290486px;
+    border-right-color: transparent;
+    border-top-color: transparent;
+    content: "";
+    display: block;
+    height: 2em;
+    position: relative;
+    width: 2em;
+}
+
+.card-margin{
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.navbar-menu{
+    .router-link-active{
+        background-color: #fafafa;
+        color: $primary;
+        font-weight: 700;
+    }
+}
+
+.switch-wrapper{
+
+    display: flex;
+    align-items: center;
+
+    /* The switch - the box around the slider */
+    .switch {
+        position: relative;
+        display: inline-block;
+        width: 60px;
+        height: 34px;
+        margin-left: 10px;
+        margin-right: 10px;
+
+        /* Hide default HTML checkbox */
+        input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+
+            &:checked {
+                + .slider {
+
+                    &:before {
+                        -webkit-transform: translateX(26px);
+                        -ms-transform: translateX(26px);
+                        transform: translateX(26px);
+                    }
+
+                    background-color: $primary;
+                }
+            }
+            &:focus {
+                + .slider {
+                    box-shadow: 0 0 1px $primary;
+                }
+            }
+        }
+    }
+
+    /* The slider */
+    .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #ccc;
+        -webkit-transition: .4s;
+        transition: .4s;
+
+        &:before {
+            position: absolute;
+            content: "";
+            height: 26px;
+            width: 26px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            -webkit-transition: .4s;
+            transition: .4s;
+        }
+
+        /* Rounded sliders */
+        &.round {
+            border-radius: 34px;
+            &:before {
+                border-radius: 50%;
+            }
+        }
+
+    }
+}
+
+// .loading-icon{
+// 	-webkit-animation:spin 500ms linear infinite;
+// 	-moz-animation:spin 500ms linear infinite;
+// 	animation:spin 500ms linear infinite;
+// 	-webkit-animation: spin 500ms linear infinite;
+//     animation: spin 500ms linear infinite;
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+// }
+
+// @-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+// @-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+// @keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
