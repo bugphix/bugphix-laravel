@@ -1,5 +1,6 @@
-<p align="center"><a href="https://github.com/bugphix/bugphix-laravel" target="_blank" rel="noopener noreferrer"><img width="400" src="https://github.com/bugphix/bugphix-laravel/blob/master/assets/images/logo.png" alt="Bugphix logo"></a></p>
+<p align="center"><a href="https://github.com/bugphix/bugphix-laravel" target="_blank" rel="noopener noreferrer"><img width="400" src="https://github.com/bugphix/bugphix-laravel/blob/master/docs/images/logo.png" alt="Bugphix logo"></a></p>
 
+<p align="center"><img width="800" src="https://github.com/bugphix/bugphix-laravel/blob/master/docs/images/dashboard.gif" alt="Dashboard gif"></p>
 
 <h3 align="center">Capture and monitor detailed error logs with nice dashboard and UI</h3>
 
@@ -26,6 +27,8 @@ edit: /app/Exceptions/Handler.php
 
 ### View admin dashboard
 http://localhost:8080/bugphix/issues
+
+For full documentation: https://bugphix.github.io/bugphix-laravel
 
 ## License
 
