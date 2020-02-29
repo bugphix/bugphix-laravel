@@ -28,7 +28,7 @@ edit: /app/Exceptions/Handler.php
 ### View admin dashboard
 http://localhost:8080/bugphix/issues
 
-For full documentation: https://bugphix.github.io/bugphix-laravel
+For full documentation: <a href="https://bugphix.github.io/bugphix-laravel" target="_blank" rel="noopener noreferrer">https://bugphix.github.io/bugphix-laravel</a>
 
 ## License
 
