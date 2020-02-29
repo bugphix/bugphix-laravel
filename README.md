@@ -31,7 +31,7 @@ edit: /app/Exceptions/Handler.php
 ### View admin dashboard
 http://localhost:8080/bugphix/issues
 
-For full documentation: <a href="https://bugphix.github.io/bugphix-laravel" target="_blank" rel="noopener noreferrer">https://bugphix.github.io/bugphix-laravel</a>
+For full documentation: <a href="https://fervent-perlman-2c4388.netlify.com" target="_blank" rel="noopener noreferrer">https://fervent-perlman-2c4388.netlify.com</a>
 
 ## License
 
