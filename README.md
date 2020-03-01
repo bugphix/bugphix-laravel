@@ -39,7 +39,7 @@ edit: /app/Exceptions/Handler.php
 ### View admin dashboard
 http://localhost:8080/bugphix/issues
 
-For full documentation: <a href="https://bughix-docs.netlify.com" target="_blank" rel="noopener noreferrer">https://bughix-docs.netlify.com</a>
+For full documentation: <a href="https://bugphix-docs.netlify.com" target="_blank" rel="noopener noreferrer">https://bugphix-docs.netlify.com</a>
 
 ## License
 
