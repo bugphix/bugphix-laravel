@@ -1,8 +1,8 @@
 <?php
 
-namespace Bugphix\Tests;
+namespace Bugphix\BugphixLaravel\Tests;
 
-use Bugphix\BugphixServiceProvider;
+use Bugphix\BugphixLaravel\BugphixServiceProvider;
 use Orchestra\Testbench\TestCase as BaseTestCase;
 
 class TestCase extends BaseTestCase
