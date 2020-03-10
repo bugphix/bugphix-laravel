@@ -7,6 +7,7 @@ jobs:
   build:
     docker:
       # Specify the version you desire here
+      - image: circleci/node:latest
       - image: circleci/php:7.4-cli
       
       # Specify service dependencies here if necessary
@@ -25,20 +26,20 @@ jobs:
       - run: sudo docker-php-ext-install zip
 
       # Download and cache dependencies
-      # - restore_cache:
-      #    keys:
+      - restore_cache:
+          keys:
             # "composer.lock" can be used if it is committed to the repo
-      #      - v1-dependencies-{{ checksum "composer.json" }}
+            - v1-dependencies-{{ checksum "composer.json" }}
             # fallback to using the latest cache if no exact match is found
-      #      - v1-dependencies-
-      
+            - v1-dependencies-
+            
       - run: composer install
       - run: composer require --dev phpunit/phpunit
 
-      #- save_cache:
-      #    key: v1-dependencies-{{ checksum "composer.json" }}
-      #    paths:
-      #      - ./vendor
+      - save_cache:
+          key: v1-dependencies-{{ checksum "composer.json" }}
+          paths:
+            - ./vendor
       - restore_cache:
           keys:
             - node-v1-{{ checksum "package.json" }}
