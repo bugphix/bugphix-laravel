@@ -1,6 +1,6 @@
 <p align="center"><a href="https://github.com/bugphix/bugphix-laravel" target="_blank" rel="noopener noreferrer"><img width="400" src="https://github.com/bugphix/bugphix-laravel/blob/master/docs/images/logo.png" alt="Bugphix logo"></a></p>
 
-
+[![Bugphix](https://circleci.com/gh/bugphix/bugphix-laravel.svg?style=shield)](https://circleci.com/gh/bugphix/bugphix-laravel)
 [![MIT License](https://img.shields.io/apm/l/atomic-design-ui.svg?)](https://github.com/tterb/atomic-design-ui/blob/master/LICENSEs)
 [![GitHub last commit](https://img.shields.io/github/last-commit/google/skia.svg?style=flat)]()
 [![Netlify Status](https://api.netlify.com/api/v1/badges/4338bd85-69e4-4008-b059-06cb1dcf94cc/deploy-status)](https://app.netlify.com/sites/bughix-docs/deploys)
