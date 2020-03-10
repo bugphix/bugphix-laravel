@@ -7,7 +7,6 @@ jobs:
   build:
     docker:
       # Specify the version you desire here
-      - image: circleci/node:latest
       - image: circleci/php:7.4-cli
       
       # Specify service dependencies here if necessary
@@ -24,6 +23,10 @@ jobs:
 
       - run: sudo apt update # PHP CircleCI 2.0 Configuration File# PHP CircleCI 2.0 Configuration File sudo apt install zlib1g-dev libsqlite3-dev
       - run: sudo docker-php-ext-install zip
+      - run: sudo apt-get install curl
+      - run: curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash
+      - run: nvm install node
+      - run: node --version
 
       # Download and cache dependencies
       - restore_cache:
