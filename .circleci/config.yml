@@ -32,7 +32,7 @@ jobs:
             # fallback to using the latest cache if no exact match is found
             - v1-dependencies-
       
-      - run: composer install -y
+      - run: composer install -n
       - run: composer require --dev phpunit/phpunit
 
       - save_cache:
