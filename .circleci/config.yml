@@ -24,9 +24,8 @@ jobs:
       - run: sudo apt update # PHP CircleCI 2.0 Configuration File# PHP CircleCI 2.0 Configuration File sudo apt install zlib1g-dev libsqlite3-dev
       - run: sudo docker-php-ext-install zip
       - run: sudo apt-get install curl
-      - run: curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash
-      - run: nvm install node
-      - run: node --version
+      - run: sudo apt install nodejs
+      - run: nodejs --version
 
       # Download and cache dependencies
       - restore_cache:
