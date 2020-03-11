@@ -1,4 +1,4 @@
-<p align="center"><a href="https://github.com/bugphix/bugphix-laravel" target="_blank" rel="noopener noreferrer"><img width="400" src="https://github.com/bugphix/bugphix-laravel/blob/master/docs/images/logo.png" alt="Bugphix logo"></a></p>
+<p align="center"><a href="https://github.com/bugphix/bugphix-laravel" target="_blank" rel="noopener noreferrer"><img width="400" src="https://github.com/bugphix/documentation/blob/master/assets/big-logo.png" alt="Bugphix logo"></a></p>
 
 [![Bugphix](https://circleci.com/gh/bugphix/bugphix-laravel.svg?style=shield)](https://circleci.com/gh/bugphix/bugphix-laravel)
 [![MIT License](https://img.shields.io/apm/l/atomic-design-ui.svg?)](https://github.com/tterb/atomic-design-ui/blob/master/LICENSEs)
@@ -10,7 +10,7 @@
 <br>
 <br>
 
-<p align="center"><img width="800" src="https://github.com/bugphix/bugphix-laravel/blob/master/docs/images/dashboard.gif" alt="Dashboard gif"></p>
+<p align="center"><img width="800" src="https://github.com/bugphix/documentation/blob/master/assets/dashboard.gif" alt="Dashboard gif"></p>
 
 #### Requirements
 - Currently tested working with Laravel 6
