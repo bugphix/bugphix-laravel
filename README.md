@@ -13,7 +13,9 @@
 <p align="center"><img width="800" src="https://github.com/bugphix/documentation/blob/master/assets/dashboard.gif" alt="Dashboard gif"></p>
 
 #### Requirements
-- Currently tested working with Laravel 6
+
+- [Check Laravel 6 requirements](https://laravel.com/docs/6.x#server-requirements)
+- [Check Laravel 7 requirements](https://laravel.com/docs/7.x#server-requirements)
 
 ## Installation
     $ composer require bugphix/bugphix-laravel
@@ -35,6 +37,9 @@ edit: /app/Exceptions/Handler.php
 
         parent::report($exception);
     }
+
+### Test Command
+    $ php artisan bugphix:test
 
 ### View admin dashboard
 http://localhost:8080/bugphix/issues

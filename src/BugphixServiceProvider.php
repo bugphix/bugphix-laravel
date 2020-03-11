@@ -94,6 +94,7 @@ class BugphixServiceProvider extends ServiceProvider
         $this->commands([
             Commands\InstallCommand::class,
             Commands\BugphixAssetsSymlink::class,
+            Commands\BugphixTestCommand::class,
         ]);
     }
 

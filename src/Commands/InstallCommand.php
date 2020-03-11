@@ -62,7 +62,7 @@ class InstallCommand extends Command
         // dump autoloaded files
         $this->info('Dumping the autoloaded files and reloading all new files');
         $composer = $this->findComposer();
-        $process = new Process($composer . ' dump-autoload');
+        $process = new Process([$composer . ' dump-autoload']);
         $process->setTimeout(null);
         $process->setWorkingDirectory(base_path())->run();
 
@@ -71,6 +71,8 @@ class InstallCommand extends Command
 
         $this->call('bugphix:assets-symlink');
         $this->comment("Bugphix successfully installed!");
+
+        $this->comment(PHP_EOL . 'Try bugphix error run: php artisan bugphix:test');
     }
 
     private function registerLocalProject()

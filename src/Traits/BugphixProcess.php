@@ -75,7 +75,7 @@ trait BugphixProcess
                 'client_browser_version' => $this->bugphixClient['browser_version'],
                 'client_os' => $this->bugphixClient['os'],
                 'client_ip' => $this->bugphixClient['ip'],
-                'client_header' => $this->bugphixClient['header'],
+                'client_header' => count($this->bugphixClient['header']) ? $this->bugphixClient['header'] : null,
             ]);
         }
 
@@ -92,21 +92,21 @@ trait BugphixProcess
          */
 
         if ($event) {
-            if ($client) {
+            if (isset($client) && !empty($client)) {
                 EventClient::firstOrCreate([
                     'event_id' => $event->id,
                     'client_id' => $client->id,
                 ]);
             }
 
-            if ($server) {
+            if (isset($server) && !empty($server)) {
                 EventServer::firstOrCreate([
                     'event_id' => $event->id,
                     'server_id' => $server->id,
                 ]);
             }
 
-            if ($user) {
+            if (isset($user) && !empty($user)) {
                 EventUser::firstOrCreate([
                     'event_id' => $event->id,
                     'user_id' => $user->id,
