@@ -16,7 +16,14 @@ class Bugphix
 
     public function asset($asset = '')
     {
-        return trim(asset(config('bugphix.assets.url')) . "{$asset}", '/');
+        return trim(url(config('bugphix.assets.url')) . "{$asset}", '/');
+    }
+
+    public function isAssetsExists()
+    {
+        $fileHeaders = json_encode(@get_headers($this->asset('/js/app.js')));
+
+        return strpos($fileHeaders, '200 OK') !== false;
     }
 
     public function catchError(Exception $e)
