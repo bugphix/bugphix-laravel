@@ -1,9 +1,11 @@
 <p align="center"><a href="https://github.com/bugphix/bugphix-laravel" target="_blank" rel="noopener noreferrer"><img width="400" src="https://github.com/bugphix/documentation/blob/master/assets/big-logo.png" alt="Bugphix logo"></a></p>
 
-[![Bugphix](https://circleci.com/gh/bugphix/bugphix-laravel.svg?style=shield)](https://circleci.com/gh/bugphix/bugphix-laravel)
-[![MIT License](https://img.shields.io/apm/l/atomic-design-ui.svg?)](https://github.com/tterb/atomic-design-ui/blob/master/LICENSEs)
-[![GitHub last commit](https://img.shields.io/github/last-commit/google/skia.svg?style=flat)]()
-[![Netlify Status](https://api.netlify.com/api/v1/badges/4338bd85-69e4-4008-b059-06cb1dcf94cc/deploy-status)](https://app.netlify.com/sites/bughix-docs/deploys)
+<p align="center">
+    <a href="https://circleci.com/gh/bugphix/bugphix-laravel" target="_blank"><img src="https://circleci.com/gh/bugphix/bugphix-laravel.svg?style=shield" alt="Build Status"></a>
+    <a href="https://github.com/tterb/atomic-design-ui/blob/master/LICENSEs" target="_blank"><img src="https://img.shields.io/apm/l/atomic-design-ui.svg?" alt="MIT License"></a>
+    <a href="#" target="_blank"><img src="https://img.shields.io/github/last-commit/google/skia.svg?style=flat" alt="GitHub last commit"></a>
+    <a href="https://app.netlify.com/sites/bughix-docs/deploys" target="_blank"><img src="https://api.netlify.com/api/v1/badges/4338bd85-69e4-4008-b059-06cb1dcf94cc/deploy-status" alt="Netlify Status"></a>
+</p>
 
 <h3 align="center">Capture and monitor detailed error logs with nice dashboard and UI</h3>
 
