@@ -30,7 +30,7 @@ return [
     |--------------------------------------------------------------------------
     */
     'assets' => [
-        'url' => 'bugphix-assets' // modify this if you need to update the assets file path of bugphix, it will also accept full url
+        'url' => rtrim('/', env('APP_URL', '')) . '/bugphix-assets' // modify this if you need to update the assets file path of bugphix, it will also accept full url
     ],
 
     /*

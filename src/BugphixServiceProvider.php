@@ -67,7 +67,7 @@ class BugphixServiceProvider extends ServiceProvider
     private function isRouteProtected()
     {
         $prefix = $this->routeConfig()['prefix'] ?? $this->defaultAdminSlug;
-        $middleware = $this->routeConfig()['middleware'] ?? [];
+        $middleware = array_diff( $this->routeConfig()['middleware'] ?? [], ['web','api'] ); // excluding web and api as middleware
         $isLocal = app()->environment('local');
 
         return $isLocal || count($middleware) || ($prefix !== $this->defaultAdminSlug);
