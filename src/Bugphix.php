@@ -21,9 +21,12 @@ class Bugphix
 
     public function isAssetsExists()
     {
-        $fileHeaders = json_encode(@get_headers($this->asset('/js/app.js')));
-
-        return strpos($fileHeaders, '200 OK') !== false;
+        try{
+            $fileHeaders=get_headers($this->asset('/js/app.js'));
+            return stripos($fileHeaders[0],"200 OK") ? true : false;
+        } catch(\Exception $e){
+            return false;
+        }
     }
 
     public function catchError(Exception $e)
