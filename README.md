@@ -4,6 +4,8 @@
     <a href="https://circleci.com/gh/bugphix/bugphix-laravel" target="_blank"><img src="https://circleci.com/gh/bugphix/bugphix-laravel.svg?style=shield" alt="Build Status"></a>
     <a href="https://github.com/tterb/atomic-design-ui/blob/master/LICENSEs" target="_blank"><img src="https://img.shields.io/apm/l/atomic-design-ui.svg?" alt="MIT License"></a>
     <a href="#" target="_blank"><img src="https://img.shields.io/github/last-commit/google/skia.svg?style=flat" alt="GitHub last commit"></a>
+    <a href="https://twitter.com/laravelarticle" target="_blank"><img src="https://badgen.net/badge/twitter/@laravelarticle/1DA1F2?icon&label" /></a>
+    <a href="https://facebook.com/laravelarticle" target="_blank"><img src="https://badgen.net/badge/facebook/laravelarticle/3b5998"/></a>
     <a href="https://app.netlify.com/sites/bughix-docs/deploys" target="_blank"><img src="https://api.netlify.com/api/v1/badges/4338bd85-69e4-4008-b059-06cb1dcf94cc/deploy-status" alt="Netlify Status"></a>
 </p>
 
