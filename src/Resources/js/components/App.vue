@@ -90,7 +90,7 @@
               target="_blank"
             ) Bugphix
 
-              span(v-html="version")
+              span(v-html="versionText")
 
         .column
           p.copyright
@@ -144,7 +144,7 @@ export default {
       window.location.reload();
     },
     checkVersion(){
-      this.version = ' – ' + window.Bugphix.app_version || '1.0';
+      this.version = window.Bugphix.app_version || '1.0';
       fetch('https://api.github.com/repos/bugphix/bugphix-laravel/releases')
         .then((response) => {
           return response.json();
@@ -155,7 +155,7 @@ export default {
             const { name, html_url } = latestVersion;
 
             if(this.version !== '' && this.version !== name){
-              this.version = ` – <a href="${html_url}" target="_blank"><strong>New version available! (${name})</strong></a>`;
+              this.version = `<a href="${html_url}" target="_blank"><strong>New version available! (${name})</strong></a>`;
             }
           }
         });
@@ -178,6 +178,11 @@ export default {
       const {assets_url} = window.Bugphix;
       return `${assets_url}/images/logo.png`
     },
+    versionText(){
+      if(!this.version) return;
+
+      return ` – ${this.version}`;
+    }
   },
   watch: {
     $route(to, from) {
