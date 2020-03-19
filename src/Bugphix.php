@@ -16,7 +16,7 @@ class Bugphix
 
     public function version()
     {
-        return 'v1.5';
+        return 'v1.5.1';
     }
 
     public function asset($asset = '')
