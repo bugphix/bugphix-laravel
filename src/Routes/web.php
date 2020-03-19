@@ -14,6 +14,10 @@ Route::group(['prefix' => 'api'], function () use ($routePrefix) {
         Route::put('issues/{ids}', "{$routePrefix}\IssuesController@bulkUpdate");
     });
 
+    Route::group(['prefix' => 'bulk-delete'], function () use ($routePrefix) {
+        Route::delete('issues/{ids}', "{$routePrefix}\IssuesController@bulkDelete");
+    });
+
     Route::resource('projects', "{$routePrefix}\ProjectsController")->except(['create', 'edit']);
     Route::resource('issues', "{$routePrefix}\IssuesController")->except(['create', 'store', 'edit']);
     Route::resource('events', "{$routePrefix}\EventsController")->only(['index', 'show']);

@@ -14,6 +14,11 @@ class Bugphix
 {
     use BugphixProcess, BugphixHelpers;
 
+    public function version()
+    {
+        return 'v1.5';
+    }
+
     public function asset($asset = '')
     {
         return trim(url(config('bugphix.assets.url')) . "{$asset}", '/');
@@ -21,10 +26,10 @@ class Bugphix
 
     public function isAssetsExists()
     {
-        try{
-            $fileHeaders=get_headers($this->asset('/js/app.js'));
-            return stripos($fileHeaders[0],"200 OK") ? true : false;
-        } catch(\Exception $e){
+        try {
+            $fileHeaders = get_headers($this->asset('/js/app.js'));
+            return stripos($fileHeaders[0], "200 OK") ? true : false;
+        } catch (\Exception $e) {
             return false;
         }
     }

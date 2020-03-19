@@ -136,7 +136,18 @@ class IssuesController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $success = false;
+        $message = 'Cannot delete issue';
+
+        $delete = Issue::where('id', $id)->delete();
+        if ($delete) {
+            $success = true;
+            $message = 'Issue deleted!';
+        }
+        return response()->json([
+            'success' => $success,
+            'message' => $message,
+        ]);
     }
 
     public function bulkUpdate(Request $req, $id)
@@ -154,10 +165,29 @@ class IssuesController extends Controller
 
                 $item->update($post);
                 $success = true;
-                $message = 'Issues updated!';
+                $message = count($ids) .' Issues updated!';
             }
         }
 
+        return response()->json([
+            'success' => $success,
+            'message' => $message,
+        ]);
+    }
+
+    public function bulkDelete($id)
+    {
+        $ids = explode(',', $id);
+        $success = false;
+        $message = 'Deleting issue failed';
+
+        if (count($ids)) {
+            $delete = Issue::whereIn('id', $ids)->delete();
+            if ($delete) {
+                $success = true;
+                $message = count($ids) .' Issues deleted!';
+            }
+        }
 
         return response()->json([
             'success' => $success,
