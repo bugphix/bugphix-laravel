@@ -67,18 +67,38 @@
     router-view
 
   .footer
-    .content.has-text-centered
-      p
-        a(
-          href="https://github.com/bugphix/bugphix-laravel"
-          target="_blank"
-        ) Bugphix
-        span.copyright © 2020. All rights reserved –
-        a(
-          href="https://github.com/jericizon"
-          target="_blank"
-        ) Jeric
+    .content
+      .columns
+        .column
+          p
+            a(
+              href="https://github.com/bugphix/bugphix-laravel/issues"
+              target="_blank"
+            ) Report issue
 
+            span &nbsp; | &nbsp;
+
+            a(
+              href="https://bugphix-docs.netlify.com"
+              target="_blank"
+            ) Docs
+
+            span &nbsp; | &nbsp;
+
+            a(
+              href="https://github.com/bugphix/bugphix-laravel"
+              target="_blank"
+            ) Bugphix
+
+              span(v-html="version")
+
+        .column
+          p.copyright
+            span © 2020 - Present. All rights reserved –&nbsp;
+            a(
+              href="https://github.com/jericizon"
+              target="_blank"
+            ) Jeric
   .notification-groups
     notifications(position="bottom right")
 
@@ -94,6 +114,7 @@ export default {
     return {
       toggleMenu: false,
       logoutUrl: '',
+      version: '',
       menuLinks: {
         'issues': 'Issues',
         'projects': 'Projects',
@@ -108,6 +129,7 @@ export default {
   mounted(){
     this.setActivePage(this.$route.name);
     this.logoutUrl = window.Bugphix.logout_url
+    this.checkVersion();
   },
   methods: {
     ...mapMutations([
@@ -120,6 +142,23 @@ export default {
     changeProject(projectId){
       this.setActiveProject(projectId);
       window.location.reload();
+    },
+    checkVersion(){
+      this.version = ' – ' + window.Bugphix.app_version || '1.0';
+      fetch('https://api.github.com/repos/bugphix/bugphix-laravel/releases')
+        .then((response) => {
+          return response.json();
+        })
+        .then((data) => {
+          if(typeof data[0] !== 'undefined'){
+            const latestVersion = data[0];
+            const { name, html_url } = latestVersion;
+
+            if(this.version !== '' && this.version !== name){
+              this.version = ` – <a href="${html_url}" target="_blank"><strong>New version available! (${name})</strong></a>`;
+            }
+          }
+        });
     },
   },
   computed: {
@@ -138,7 +177,7 @@ export default {
     bugphixLogo(){
       const {assets_url} = window.Bugphix;
       return `${assets_url}/images/logo.png`
-    }
+    },
   },
   watch: {
     $route(to, from) {
@@ -190,8 +229,8 @@ export default {
     .footer{
       padding: 20px;
 
-      span.copyright {
-        margin: 0 5px;
+      .copyright {
+        text-align: right;
       }
     }
   }

@@ -16,10 +16,16 @@ export default {
     })
   },
   update(issueId, data) {
-    return  axios({
+    return axios({
       method: 'put',
       url: `issues/${issueId}`,
       data,
+    })
+  },
+  delete(issueId){
+    return axios({
+      method: 'delete',
+      url: `issues/${issueId}`
     })
   },
   bulkUpdate(issueId, data) {
@@ -27,6 +33,12 @@ export default {
       method: 'put',
       url: `bulk-update/issues/${issueId}`,
       data,
+    })
+  },
+  bulkDelete(issueId, data) {
+    return  axios({
+      method: 'delete',
+      url: `bulk-delete/issues/${issueId}`
     })
   },
   getEvent(eventId) {

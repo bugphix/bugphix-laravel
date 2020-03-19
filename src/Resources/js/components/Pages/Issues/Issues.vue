@@ -34,6 +34,16 @@
                 i.mdi.mdi-close
               span Ignore {{ selected.length }} issues
 
+            button.button.is-danger(
+              :class="{'is-loading' : buttonIsLoading}"
+              :disabled="buttonIsLoading"
+              @click="deleteIssue()"
+              title="Delete issue permanently"
+            )
+              span.icon
+                i.mdi.mdi-delete
+              span Delete {{ selected.length }} issues
+
           .dropdown.is-right(
             :class="{'is-active' : openStatusFilter}"
             @click="openStatusFilter = !openStatusFilter"
@@ -168,7 +178,31 @@ export default {
         .then((response) => {
           if(response.data.success){
             this.$notify({
-              text: 'Issues updated',
+              text: response.data.message || 'Issues updated!',
+            });
+            this.setIssueList(1);
+          }
+        })
+        .catch((error) => {
+          this.$notify({
+            type: 'error',
+            text: 'Oops, something went wrong. Try again later.',
+          });
+        })
+        .then(()=>{
+          this.selected = [];
+        })
+    },
+    deleteIssue(){
+
+      if(this.selected.length === 0) return;
+
+      const ids = this.selected.join(',');
+      IssueApi.bulkDelete(ids)
+        .then((response) => {
+          if(response.data.success){
+            this.$notify({
+              text: response.data.message || 'Issues deleted!',
             });
             this.setIssueList(1);
           }

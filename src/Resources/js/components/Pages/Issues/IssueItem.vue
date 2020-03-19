@@ -10,6 +10,7 @@
           button.button(
             :class="{'is-loading' : buttonIsLoading}"
             @click="updateStatus('unresolved')"
+            title="Unresolve issue"
           )
             span.icon
               i.mdi.mdi-alert-outline
@@ -20,6 +21,7 @@
             :class="{'is-loading' : buttonIsLoading}"
             :disabled="buttonIsLoading"
             @click="updateStatus('resolved')"
+            title="Resolve issue"
           )
             span.icon
               i.mdi.mdi-check
@@ -29,10 +31,21 @@
             :class="{'is-loading' : buttonIsLoading}"
             :disabled="buttonIsLoading"
             @click="updateStatus('ignored')"
+            title="Ignore issue"
           )
             span.icon
               i.mdi.mdi-close
             span Ignore issue
+
+        button.button.is-danger(
+            :class="{'is-loading' : buttonIsLoading}"
+            :disabled="buttonIsLoading"
+            @click="deleteIssue()"
+            title="Delete issue permanently"
+          )
+            span.icon
+              i.mdi.mdi-delete
+            span Delete
 
     h2.title.is-4 {{issueItem.issue_error_exception}}
 
@@ -142,6 +155,9 @@ export default {
     }
   },
   methods: {
+    ...mapMutations([
+      'setIsPageLoading',
+    ]),
     ...mapActions([
       'setActiveProject',
     ]),
@@ -152,6 +168,32 @@ export default {
       'setIssueItem',
       'setEventItem',
     ]),
+    deleteIssue(){
+      this.buttonIsLoading=true;
+      IssueApi.delete(this.issueItem.id)
+        .then((response) => {
+          if(response.data.success){
+            this.$notify({
+              text: response.data.message,
+            });
+            this.setIsPageLoading(true);
+            setTimeout(()=>{
+              this.setIsPageLoading(false);
+              this.$router.push({ name: "issues"});
+            }, 1000);
+          }
+        })
+        .catch((error) => {
+          this.$notify({
+            type: 'error',
+            text: 'Oops, something went wrong. Try again later.',
+          });
+        })
+        .then(()=>{
+          // commit('setIsPageLoading', false, {root:true})
+          this.buttonIsLoading=false;
+        })
+    },
     updateStatus(status='resolve'){
       this.buttonIsLoading=true;
       const formData = {

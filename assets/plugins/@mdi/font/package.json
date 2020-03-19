@@ -1,29 +1,33 @@
 {
-  "_from": "@mdi/font@^4.9.95",
+  "_args": [
+    [
+      "@mdi/font@4.9.95",
+      "D:\\xampp-7.3.10\\htdocs\\projects\\laravel-packages\\bugphix\\bugphix-laravel"
+    ]
+  ],
+  "_from": "@mdi/font@4.9.95",
   "_id": "@mdi/font@4.9.95",
   "_inBundle": false,
   "_integrity": "sha512-m2sbAs+SMwRnWpkMriBxEulwuhmqRyh6X+hdOZlqSxYZUM2C2TaDnQ4gcilzdoAgru2XYnWViZ/xPuSDGgRXVw==",
   "_location": "/@mdi/font",
   "_phantomChildren": {},
   "_requested": {
-    "type": "range",
+    "type": "version",
     "registry": true,
-    "raw": "@mdi/font@^4.9.95",
+    "raw": "@mdi/font@4.9.95",
     "name": "@mdi/font",
     "escapedName": "@mdi%2ffont",
     "scope": "@mdi",
-    "rawSpec": "^4.9.95",
+    "rawSpec": "4.9.95",
     "saveSpec": null,
-    "fetchSpec": "^4.9.95"
+    "fetchSpec": "4.9.95"
   },
   "_requiredBy": [
-    "#USER",
     "/"
   ],
   "_resolved": "https://registry.npmjs.org/@mdi/font/-/font-4.9.95.tgz",
-  "_shasum": "00ed2ffe289c9230f146e74559c07542d3f4475a",
-  "_spec": "@mdi/font@^4.9.95",
-  "_where": "D:\\xampp-7.3.10\\htdocs\\projects\\laravel-packages\\jheckcode\\bugphix-laravel",
+  "_spec": "4.9.95",
+  "_where": "D:\\xampp-7.3.10\\htdocs\\projects\\laravel-packages\\bugphix\\bugphix-laravel",
   "author": {
     "name": "Austin Andrews",
     "url": "http://twitter.com/templarian"
@@ -31,8 +35,6 @@
   "bugs": {
     "url": "https://github.com/Templarian/MaterialDesign/issues"
   },
-  "bundleDependencies": false,
-  "deprecated": false,
   "description": "Dist for Material Design Webfont. This includes the Stock and Community icons in a single webfont collection.",
   "homepage": "https://materialdesignicons.com",
   "keywords": [

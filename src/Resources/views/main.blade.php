@@ -73,6 +73,7 @@
                         'logout_url' => url(trim(config('bugphix.dashboard.logout_url'))) ?? '',
                         'dsn_slug' => trim(url(config('bugphix.option.dsn_slug'))),
                         'assets_url' => Bugphix::asset('/'),
+                        'app_version'=> Bugphix::version(),
                     );
                 @endphp
                 window.Bugphix =  Object.freeze(JSON.parse( `{!!json_encode($bugphixOptions)!!}` ));
