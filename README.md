@@ -6,6 +6,7 @@
     <a href="#" target="_blank"><img src="https://img.shields.io/github/last-commit/google/skia.svg?style=flat" alt="GitHub last commit"></a>
     <a href="https://twitter.com/laravelarticle" target="_blank"><img src="https://badgen.net/badge/twitter/@laravelarticle/1DA1F2?icon&label" /></a>
     <a href="https://facebook.com/laravelarticle" target="_blank"><img src="https://badgen.net/badge/facebook/laravelarticle/3b5998"/></a>
+    <a title="MadeWithLaravel.com Shield" href="https://madewithlaravel.com/p/bugphix/shield-link"> <img src="https://madewithlaravel.com/storage/repo-shields/2229-shield.svg"/></a>
     <a href="https://app.netlify.com/sites/bughix-docs/deploys" target="_blank"><img src="https://api.netlify.com/api/v1/badges/4338bd85-69e4-4008-b059-06cb1dcf94cc/deploy-status" alt="Netlify Status"></a>
 </p>
 
