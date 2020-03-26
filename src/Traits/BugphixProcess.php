@@ -75,16 +75,24 @@ trait BugphixProcess
                 'client_browser_version' => $this->bugphixClient['browser_version'],
                 'client_os' => $this->bugphixClient['os'],
                 'client_ip' => $this->bugphixClient['ip'],
-                'client_header' => count($this->bugphixClient['header']) ? $this->bugphixClient['header'] : null,
+                'client_header' => isset($this->bugphixClient['header']) && count($this->bugphixClient['header']) ? $this->bugphixClient['header'] : null,
             ]);
         }
 
         if (count($this->bugphixUser)) {
-            $user = User::firstOrCreate([
-                'user_unique' => $this->bugphixUser['unique'],
-            ], [
-                'user_meta' => $this->bugphixUser['meta'],
-            ]);
+
+            $user = User::where('user_unique', $this->bugphixUser['unique'])->first();
+
+            if($user){
+                $user->user_meta = $this->bugphixUser['meta'];
+                $user->save();
+            }
+            else{
+                $user = User::create([
+                    'user_unique' => $this->bugphixUser['unique'],
+                    'user_meta' => $this->bugphixUser['meta'],
+                ]);
+            }
         }
 
         /**
