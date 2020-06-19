@@ -12,7 +12,7 @@ use Bugphix\BugphixLaravel\Traits\BugphixHelpers;
 
 class Bugphix
 {
-    use BugphixProcess, BugphixHelpers;
+    use BugphixProcess;
 
     public function version()
     {
