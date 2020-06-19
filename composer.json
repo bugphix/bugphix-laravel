@@ -1,5 +1,5 @@
 {
-    "name": "rakshitbharat/bugphix-laravel",
+    "name": "bugphix/bugphix-laravel",
     "description": "Capture and monitor detailed error logs with nice dashboard and UI.",
     "keywords": [
         "bugphix",
