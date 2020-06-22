@@ -19,7 +19,7 @@ use Bugphix\BugphixLaravel\Models\EventUser;
 
 trait BugphixProcess
 {
-    use BugphixSetter, BugphixHelpers;
+    use BugphixSetter;
 
     /**
      * This is where the saving of records happen.
