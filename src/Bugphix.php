@@ -3,7 +3,7 @@
 namespace Bugphix\BugphixLaravel;
 
 use GuzzleHttp\Client as GuzzleClient;
-use Exception;
+use Throwable;
 use Log;
 
 //traits
@@ -34,7 +34,7 @@ class Bugphix
         }
     }
 
-    public function catchError(Exception $e)
+    public function catchError(Throwable $e)
     {
         // $timeStart = microtime(true);
         $this->setProject();
@@ -68,7 +68,7 @@ class Bugphix
                 ]);
 
                 Log::info($res->getBody());
-            } catch (Exception $e) {
+            } catch (Throwable $e) {
                 dd($e);
             }
         }
