@@ -1,5 +1,5 @@
 {
-    "name": "bugphix/bugphix-laravel",
+    "name": "ihos/bugphix-laravel",
     "description": "Capture and monitor detailed error logs with nice dashboard and UI.",
     "keywords": [
         "bugphix",
